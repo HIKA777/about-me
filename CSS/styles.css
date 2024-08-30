@@ -1,51 +1,414 @@
-
-.body {
+/* 全体のスタイル */
+body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* メニューバー */
+.menu-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    z-index: 1000;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    transition: left 0.3s ease;
+    padding-top: 60px;
+    z-index: 999;
+}
+
+.menu.show {
+    left: 0;
+}
+
+.menu-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 10px 20px;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.menu ul li a:hover {
+    background-color: #575757;
+}
+
+/* ヒーローセクション */
+.hero {
+    background: url('hero-background.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 6rem 1rem; /* 余白を増やして、テキストが目立つように */
+    height: 100vh; /* ビューポートの高さを占める */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 垂直中央揃え */
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* テキストに影をつけて視認性を向上 */
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* テキストに影をつけて視認性を向上 */
+}
+
+/* コンテンツセクション */
+main {
+    padding: 2rem;
+}
+
+.intro, .highlight {
+    margin-bottom: 2rem;
+}
+
+.highlight-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.highlight-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 30%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-item h3 {
+    margin-top: 0;
+}
+
+/* フッター */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+}
+/* 全体のスタイル */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
 }
 
-.header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
+.header, .hero, .footer {
     text-align: center;
 }
 
-.nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.nav ul li {
-    display: inline;
-    margin-right: 1rem;
-}
-
-.nav ul li a {
+.hero {
+    background: url('hero-bg.jpg') no-repeat center center/cover;
     color: #fff;
-    text-decoration: none;
+    padding: 4rem 0;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.info, .attractions {
+    padding: 2rem;
+    text-align: center;
+}
+
+.gallery {
+    padding: 2rem;
+    text-align: center;
+    background: #fff;
+}
+
+.gallery h2 {
+    margin-bottom: 1rem;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.gallery-item {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
 }
 
 .footer {
-    text-align: center;
-    padding: 3rem;
     background: #333;
     color: #fff;
-    position: fixed;
-    width: 100%;
+    padding: 1rem;
+    position: relative;
     bottom: 0;
+    width: 100%;
 }
 
+.menu-toggle, .menu {
+    /* 既存のスタイル */
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .gallery-item {
+        width: 100%;
+        height: auto;
+    }
+}
+/* 既存のスタイル */
+
+.contact-form {
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contact-form h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    padding: 0.75rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #575757;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 600px) {
+    .contact-form {
+        padding: 1rem;
+    }
+
+    .contact-form h2 {
+        font-size: 1.5rem;
+    }
+}
+/* 全体のスタイル */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ヘッダー */
+.header {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #333;
+    color: #fff;
+    position: relative;
+}
+
+.menu-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    color: #fff;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    transition: left 0.3s ease;
+    padding-top: 60px;
+    z-index: 999;
+}
+
+.menu.show {
+    left: 0;
+}
+
+.menu-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 10px 20px;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.menu ul li a:hover {
+    background-color: #575757;
+}
+
+/* プロフィールセクション */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.profile-info h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: #333;
+}
+
+.profile-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.profile-info h3 {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* フッター */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: #fff;
+    margin-top: auto;
+}
+
+/* レスポンシブデザイン */
 @media (max-width: 600px) {
     .header, .footer {
         padding: 1rem;
     }
 
-    .nav ul li {
-        display: block;
-        margin: 0.5rem 0;
+    .menu-toggle {
+        font-size: 20px;
     }
 }
